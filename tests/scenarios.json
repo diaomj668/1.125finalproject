@@ -1,0 +1,227 @@
+[
+  {
+    "id": "saturday_closures",
+    "purpose": "Saturday: replace closed museums",
+    "request": {
+      "date": "2026-11-14",
+      "budget": 20
+    },
+    "expected_status": "fits_estimates"
+  },
+  {
+    "id": "weekday_free",
+    "purpose": "Three free museums",
+    "request": {
+      "date": "2026-11-18",
+      "budget": 0
+    },
+    "expected_status": "fits_estimates"
+  },
+  {
+    "id": "monday_free",
+    "purpose": "Monday: two free museums",
+    "request": {
+      "date": "2026-11-16",
+      "budget": 0,
+      "stop_count": 2
+    },
+    "expected_status": "fits_estimates"
+  },
+  {
+    "id": "monday_five",
+    "purpose": "Monday cannot fit all five museums",
+    "request": {
+      "date": "2026-11-16",
+      "stop_count": 5,
+      "start": "09:00"
+    },
+    "expected_status": "needs_change"
+  },
+  {
+    "id": "saturday_free",
+    "purpose": "Saturday cannot fit three free museums",
+    "request": {
+      "date": "2026-11-14",
+      "budget": 0
+    },
+    "expected_status": "needs_change"
+  },
+  {
+    "id": "thanksgiving",
+    "purpose": "Thanksgiving closures",
+    "request": {
+      "date": "2026-11-26",
+      "stop_count": 2
+    },
+    "expected_status": "needs_change"
+  },
+  {
+    "id": "day_before_holiday",
+    "purpose": "Four museums closed before Thanksgiving",
+    "request": {
+      "date": "2026-11-25",
+      "stop_count": 2
+    },
+    "expected_status": "needs_change"
+  },
+  {
+    "id": "too_late",
+    "purpose": "Not enough open time after 16:00",
+    "request": {
+      "date": "2026-11-18",
+      "start": "16:00",
+      "end": "18:00",
+      "stop_count": 2
+    },
+    "expected_status": "needs_change"
+  },
+  {
+    "id": "early_start",
+    "purpose": "Wait or reorder for later opening",
+    "request": {
+      "date": "2026-11-18",
+      "start": "09:00",
+      "end": "12:00",
+      "stop_count": 2
+    },
+    "expected_status": "fits_estimates"
+  },
+  {
+    "id": "short_window",
+    "purpose": "Two one-hour stops in ninety minutes",
+    "request": {
+      "date": "2026-11-18",
+      "start": "11:00",
+      "end": "12:30",
+      "stop_count": 2
+    },
+    "expected_status": "needs_change"
+  },
+  {
+    "id": "no_walking",
+    "purpose": "Zero walking allowance",
+    "request": {
+      "date": "2026-11-18",
+      "max_walk_minutes": 0,
+      "stop_count": 2
+    },
+    "expected_status": "needs_change"
+  },
+  {
+    "id": "short_walk",
+    "purpose": "Two nearby museums",
+    "request": {
+      "date": "2026-11-18",
+      "max_walk_minutes": 15,
+      "stop_count": 2
+    },
+    "expected_status": "fits_estimates"
+  },
+  {
+    "id": "party_cost",
+    "purpose": "Five museums exceed two adults' $20 budget",
+    "request": {
+      "date": "2026-11-18",
+      "adults": 2,
+      "budget": 20,
+      "stop_count": 5,
+      "start": "09:00",
+      "max_walk_minutes": 60
+    },
+    "expected_status": "needs_change"
+  },
+  {
+    "id": "shared_ticket",
+    "purpose": "Five museums with one joint ticket per adult",
+    "request": {
+      "date": "2026-11-18",
+      "adults": 2,
+      "budget": 40,
+      "stop_count": 5,
+      "start": "09:00",
+      "max_walk_minutes": 60
+    },
+    "expected_status": "fits_estimates"
+  },
+  {
+    "id": "excluded_stop",
+    "purpose": "Replan without Harvard Art Museums",
+    "request": {
+      "date": "2026-11-18",
+      "budget": 0,
+      "stop_count": 2,
+      "excluded_ids": [
+        "0x89e377448897a76d:0xe34244cf7bf8f747"
+      ]
+    },
+    "expected_status": "fits_estimates"
+  },
+  {
+    "id": "too_few_records",
+    "purpose": "Only one allowed museum remains",
+    "request": {
+      "date": "2026-11-18",
+      "stop_count": 2,
+      "excluded_ids": [
+        "0x89e377448897a76d:0xe34244cf7bf8f747",
+        "0x89e3774157d08287:0xe1392204489e893b",
+        "0x89e37746dc6c2a43:0xe91ab7e7b2233d1c",
+        "0x89e377412f2ed67b:0x613d8c4648bcba7b"
+      ]
+    },
+    "expected_status": "needs_change"
+  },
+  {
+    "id": "expired_snapshot",
+    "purpose": "Trip outside the snapshot planning window",
+    "request": {
+      "date": "2027-01-03",
+      "stop_count": 2
+    },
+    "expected_status": "needs_confirmation"
+  },
+  {
+    "id": "old_nature_records",
+    "purpose": "Missing admission and hours for outdoor places",
+    "request": {
+      "date": "2026-11-18",
+      "source_mode": "historical",
+      "interests": [
+        "nature"
+      ],
+      "stop_count": 2
+    },
+    "expected_status": "needs_confirmation"
+  },
+  {
+    "id": "old_food_records",
+    "purpose": "Old restaurant records do not verify a meal budget",
+    "request": {
+      "date": "2026-11-18",
+      "source_mode": "historical",
+      "interests": [
+        "food"
+      ],
+      "start": "09:00",
+      "end": "20:00",
+      "max_walk_minutes": 180,
+      "stop_count": 2
+    },
+    "expected_status": "needs_confirmation"
+  },
+  {
+    "id": "science_saturday",
+    "purpose": "Science interests with Saturday closures",
+    "request": {
+      "date": "2026-11-14",
+      "interests": [
+        "museums",
+        "science"
+      ],
+      "stop_count": 2,
+      "budget": 20
+    },
+    "expected_status": "fits_estimates"
+  }
+]
+
