@@ -111,6 +111,7 @@ def plan(value,catalog=None,provider=None):
     return {"request":request.to_dict(),"provider":provider,
             "provider_label":"Claude API" if engine else "Local planner (no LLM call)",
             "model":engine.model if engine else None,"model_usage":engine.usage if engine else [],
+            "model_calls":engine.calls if engine else [],
             "candidate_count":len(candidates),"candidates":[{"place_id":p["place_id"],"name":p["name"],
                 "matched_terms":p["matched_terms"],"match_score":p["match_score"]} for p in candidates],
             "trace":trace,"attempts":attempts,"result":final,"search":search,

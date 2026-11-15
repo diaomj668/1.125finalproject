@@ -1,8 +1,10 @@
 """Optional Claude draft generator. Authentication stays in the local environment."""
 import json
 import os
+import time
 import urllib.error
 import urllib.request
+from .config import DEFAULT_MODEL
 
 class ModelError(RuntimeError):
     pass
@@ -18,8 +20,9 @@ than relaxing the user's constraints. Return JSON only."""
 class ClaudePlanner:
     def __init__(self):
         self.key=os.getenv("ANTHROPIC_API_KEY","")
-        self.model=os.getenv("ANTHROPIC_MODEL","claude-haiku-4-5-20251001")
+        self.model=os.getenv("ANTHROPIC_MODEL",DEFAULT_MODEL)
         self.usage=[]
+        self.calls=[]
 
     def generate(self, request, records, previous=None, timeout=25):
         if not self.key:
@@ -31,13 +34,33 @@ class ClaudePlanner:
         req=urllib.request.Request("https://api.anthropic.com/v1/messages",
             data=json.dumps(payload).encode(),method="POST",
             headers={"Content-Type":"application/json","anthropic-version":"2023-06-01","x-api-key":self.key})
+        started=time.monotonic()
         try:
             with urllib.request.urlopen(req,timeout=timeout) as response:
                 raw=json.loads(response.read(500_000))
+        except urllib.error.HTTPError as exc:
+            messages={400:"Claude rejected the request. Check the model and account billing in Claude Console.",
+                      401:"Claude rejected the API key. Replace it in the local setup.",
+                      403:"The API key does not have access to this Claude model.",
+                      404:"This Claude model was not found. Check ANTHROPIC_MODEL.",
+                      429:"Claude rate limit reached. Wait before trying again.",
+                      529:"Claude is temporarily overloaded. Try again later."}
+            raise ModelError(messages.get(exc.code,f"Claude returned HTTP {exc.code}. Try again later.")) from None
         except (urllib.error.URLError,TimeoutError,ValueError):
             raise ModelError("Claude did not return a usable response. Check the local API setup and try again.") from None
-        self.usage.append(raw.get("usage",{}))
-        text="".join(x.get("text","") for x in raw.get("content",[]) if x.get("type")=="text").strip()
+        if not isinstance(raw,dict) or not isinstance(raw.get("content"),list):
+            raise ModelError("Claude returned an invalid response format.")
+        usage=raw.get("usage",{})
+        if not isinstance(usage,dict):
+            usage={}
+        self.usage.append(usage)
+        self.calls.append({"model":raw.get("model",self.model),
+            "elapsed_seconds":round(time.monotonic()-started,3),
+            "stop_reason":raw.get("stop_reason"),"usage":usage})
+        if raw.get("stop_reason")=="max_tokens":
+            raise ModelError("Claude reached the output limit before finishing the plan.")
+        text="".join(x.get("text","") for x in raw["content"]
+                     if isinstance(x,dict) and x.get("type")=="text" and isinstance(x.get("text"),str)).strip()
         if text.startswith("```"):
             text=text.split("\n",1)[-1].rsplit("```",1)[0].strip()
         try:
@@ -50,5 +73,5 @@ class ClaudePlanner:
                         or not isinstance(s["place_id"],str)):
                     raise ValueError()
             return stops
-        except (ValueError,KeyError,TypeError):
+        except (ValueError,KeyError,TypeError,AttributeError):
             raise ModelError("Claude returned an invalid plan format.") from None
