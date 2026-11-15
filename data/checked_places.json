@@ -1,0 +1,373 @@
+{
+  "checked_at": "2026-11-13",
+  "planning_horizon_days": 30,
+  "scope": "Five Cambridge museums. Official web pages checked on the date above. This is a dated snapshot, not live availability. The 30-day horizon is a project policy.",
+  "places": [
+    {
+      "place_id": "0x89e377448897a76d:0xe34244cf7bf8f747",
+      "name": "Harvard Art Museums",
+      "tags": [
+        "museums",
+        "art",
+        "history"
+      ],
+      "weekly_hours": {
+        "0": [],
+        "1": [
+          [
+            "10:00",
+            "17:00"
+          ]
+        ],
+        "2": [
+          [
+            "10:00",
+            "17:00"
+          ]
+        ],
+        "3": [
+          [
+            "10:00",
+            "17:00"
+          ]
+        ],
+        "4": [
+          [
+            "10:00",
+            "17:00"
+          ]
+        ],
+        "5": [
+          [
+            "10:00",
+            "17:00"
+          ]
+        ],
+        "6": [
+          [
+            "10:00",
+            "17:00"
+          ]
+        ]
+      },
+      "overrides": {
+        "2026-11-11": [],
+        "2026-11-26": [],
+        "2026-12-24": [],
+        "2026-12-25": [],
+        "2026-12-31": [
+          [
+            "10:00",
+            "15:00"
+          ]
+        ],
+        "2027-01-01": []
+      },
+      "adult_admission_usd": 0,
+      "ticket_group": "art",
+      "source_urls": [
+        "https://harvardartmuseums.org/visit",
+        "https://harvardartmuseums.org/visit/policies/hours-closings"
+      ],
+      "note": "Free general admission for all visitors. Monday closures and listed holidays are stored separately."
+    },
+    {
+      "place_id": "0x89e377412f2ed67b:0x613d8c4648bcba7b",
+      "name": "Harvard Museum of Natural History",
+      "tags": [
+        "museums",
+        "science",
+        "nature"
+      ],
+      "weekly_hours": {
+        "0": [
+          [
+            "09:00",
+            "17:00"
+          ]
+        ],
+        "1": [
+          [
+            "09:00",
+            "17:00"
+          ]
+        ],
+        "2": [
+          [
+            "09:00",
+            "17:00"
+          ]
+        ],
+        "3": [
+          [
+            "09:00",
+            "17:00"
+          ]
+        ],
+        "4": [
+          [
+            "09:00",
+            "17:00"
+          ]
+        ],
+        "5": [
+          [
+            "09:00",
+            "17:00"
+          ]
+        ],
+        "6": [
+          [
+            "09:00",
+            "17:00"
+          ]
+        ]
+      },
+      "overrides": {
+        "2026-11-25": [],
+        "2026-11-26": [],
+        "2026-12-24": [],
+        "2026-12-25": [],
+        "2026-12-26": [],
+        "2026-12-27": [],
+        "2026-12-28": [],
+        "2027-01-01": [],
+        "2026-11-17": [
+          [
+            "11:00",
+            "17:00"
+          ]
+        ],
+        "2027-01-12": [
+          [
+            "09:00",
+            "15:00"
+          ]
+        ]
+      },
+      "adult_admission_usd": 20,
+      "ticket_group": "hmnh-peabody",
+      "source_urls": [
+        "https://www.hmnh.harvard.edu/plan-your-visit"
+      ],
+      "note": "Standard adult admission, without discounts. One ticket also covers the Peabody Museum; charge this group only once."
+    },
+    {
+      "place_id": "0x89e37746d15ee397:0x120a9da97291d878",
+      "name": "Peabody Museum of Archaeology and Ethnology",
+      "tags": [
+        "museums",
+        "history",
+        "archaeology"
+      ],
+      "weekly_hours": {
+        "0": [
+          [
+            "09:00",
+            "17:00"
+          ]
+        ],
+        "1": [
+          [
+            "09:00",
+            "17:00"
+          ]
+        ],
+        "2": [
+          [
+            "09:00",
+            "17:00"
+          ]
+        ],
+        "3": [
+          [
+            "09:00",
+            "17:00"
+          ]
+        ],
+        "4": [
+          [
+            "09:00",
+            "17:00"
+          ]
+        ],
+        "5": [
+          [
+            "09:00",
+            "17:00"
+          ]
+        ],
+        "6": [
+          [
+            "09:00",
+            "17:00"
+          ]
+        ]
+      },
+      "overrides": {
+        "2026-11-25": [],
+        "2026-11-26": [],
+        "2026-12-24": [],
+        "2026-12-25": [],
+        "2026-12-26": [],
+        "2026-12-27": [],
+        "2026-12-28": [],
+        "2027-01-01": [],
+        "2027-01-12": [
+          [
+            "09:00",
+            "15:00"
+          ]
+        ]
+      },
+      "adult_admission_usd": 20,
+      "ticket_group": "hmnh-peabody",
+      "source_urls": [
+        "https://peabody.harvard.edu/hours-admission",
+        "https://www.hmnh.harvard.edu/plan-your-visit"
+      ],
+      "note": "Standard adult admission. The joint ticket includes the Harvard Museum of Natural History; charge this group only once."
+    },
+    {
+      "place_id": "0x89e3774157d08287:0xe1392204489e893b",
+      "name": "Collection of Historical Scientific Instruments",
+      "tags": [
+        "museums",
+        "science",
+        "history"
+      ],
+      "weekly_hours": {
+        "0": [
+          [
+            "11:00",
+            "16:00"
+          ]
+        ],
+        "1": [
+          [
+            "11:00",
+            "16:00"
+          ]
+        ],
+        "2": [
+          [
+            "11:00",
+            "16:00"
+          ]
+        ],
+        "3": [
+          [
+            "11:00",
+            "16:00"
+          ]
+        ],
+        "4": [
+          [
+            "11:00",
+            "16:00"
+          ]
+        ],
+        "5": [],
+        "6": [
+          [
+            "11:00",
+            "16:00"
+          ]
+        ]
+      },
+      "overrides": {
+        "2026-11-25": [],
+        "2026-11-26": [],
+        "2026-12-24": [],
+        "2026-12-25": [],
+        "2026-12-26": [],
+        "2026-12-27": [],
+        "2026-12-28": [],
+        "2027-01-01": [],
+        "2027-01-12": [
+          [
+            "11:00",
+            "15:00"
+          ]
+        ]
+      },
+      "adult_admission_usd": 0,
+      "ticket_group": "chsi",
+      "source_urls": [
+        "https://chsi.harvard.edu/visit-us"
+      ],
+      "note": "Free general admission. Open Sunday through Friday; closed Saturday."
+    },
+    {
+      "place_id": "0x89e37746dc6c2a43:0xe91ab7e7b2233d1c",
+      "name": "Harvard Museum of the Ancient Near East",
+      "tags": [
+        "museums",
+        "history",
+        "archaeology"
+      ],
+      "weekly_hours": {
+        "0": [
+          [
+            "11:00",
+            "16:00"
+          ]
+        ],
+        "1": [
+          [
+            "11:00",
+            "16:00"
+          ]
+        ],
+        "2": [
+          [
+            "11:00",
+            "16:00"
+          ]
+        ],
+        "3": [
+          [
+            "11:00",
+            "16:00"
+          ]
+        ],
+        "4": [
+          [
+            "11:00",
+            "16:00"
+          ]
+        ],
+        "5": [],
+        "6": [
+          [
+            "11:00",
+            "16:00"
+          ]
+        ]
+      },
+      "overrides": {
+        "2026-11-25": [],
+        "2026-11-26": [],
+        "2026-12-24": [],
+        "2026-12-25": [],
+        "2026-12-26": [],
+        "2026-12-27": [],
+        "2026-12-28": [],
+        "2027-01-01": [],
+        "2027-01-12": [
+          [
+            "11:00",
+            "15:00"
+          ]
+        ]
+      },
+      "adult_admission_usd": 0,
+      "ticket_group": "hmane",
+      "source_urls": [
+        "https://hmane.harvard.edu/visit"
+      ],
+      "note": "Free general admission. Open Sunday through Friday; closed Saturday."
+    }
+  ]
+}
+
