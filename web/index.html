@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Massachusetts Trip Planner</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header><a class="brand" href="/" aria-label="Massachusetts Trip Planner home"><span class="brandmark">M</span> Massachusetts Trip Planner</a><span class="version">Midpoint · Cambridge pilot</span></header>
+<main>
+<section class="hero"><div><p class="eyebrow">ONE DAY, WITH THE DETAILS CHECKED</p><h1>A day out.<br>A plan you can check.</h1><p>Choose a few museums around Harvard Square. See the opening hours, admission costs, and walking estimates behind each stop.</p><div class="hero-tags"><span>5 museums with checked facts</span><span id="provider">Local planner</span></div></div><figure><img src="/boston.jpg" alt="An illustrative view of Boston and the waterfront"><figcaption>Massachusetts · One-day Cambridge pilot</figcaption></figure></section>
+<div class="workspace">
+<aside class="input-panel"><div class="panel-heading"><span class="step">01</span><h2>Your day</h2></div>
+<form id="trip-form">
+<label>Date<input name="date" id="date" type="date" required value="2026-11-14"></label>
+<div class="pair"><label>Start<input name="start" type="time" required value="11:00"></label><label>Finish by<input name="end" type="time" required value="17:00"></label></div>
+<div class="pair"><label>Adults<input name="adults" type="number" min="1" max="6" value="1" required></label><label>Stops<select name="stop_count"><option value="2">2 stops</option><option value="3" selected>3 stops</option><option value="4">4 stops</option><option value="5">5 stops</option></select></label></div>
+<div class="pair"><label>Admission budget ($)<input name="budget" type="number" min="0" max="1000" step="1" value="20" required></label><label>Walking limit (min)<input name="max_walk_minutes" type="number" min="0" max="180" value="45" required></label></div>
+<p class="field-note">Budget is for the whole group, admission only. The local planner allows one hour per stop.</p>
+<fieldset><legend>Interests</legend><div class="interests"><label><input type="checkbox" name="interest" value="museums" checked>Museums</label><label><input type="checkbox" name="interest" value="art" checked>Art</label><label><input type="checkbox" name="interest" value="science">Science</label><label><input type="checkbox" name="interest" value="history">History</label><label><input type="checkbox" name="interest" value="nature">Nature</label><label><input type="checkbox" name="interest" value="food">Food</label></div></fieldset>
+<label>Place records<select name="source_mode"><option value="checked">Five museums · facts checked Nov 13, 2026</option><option value="historical">Wider Cambridge records · 2021 data</option></select></label>
+<p class="field-note">Food and outdoor places are only in the wider records. Old or missing facts stay unknown.</p>
+<div id="exclusions" hidden></div>
+<button class="primary" type="submit" id="plan-button">Build and check my day <span>→</span></button>
+<p id="error" role="alert" hidden></p>
+</form>
+<div class="examples"><p>Try a midpoint example</p><button type="button" data-example="saturday">Saturday closures</button><button type="button" data-example="free">A $0 museum day</button><button type="button" data-example="historical">Missing facts</button></div>
+</aside>
+<section class="output-panel" aria-live="polite" aria-busy="false" id="output">
+<div class="panel-heading"><span class="step">02</span><h2>Your plan, explained</h2></div>
+<div id="empty"><div class="empty-icon">↗</div><h3>Start with Saturday.</h3><p>Two museums in the first draft are closed on Saturdays. Build a day to see what the checker catches and how the plan changes.</p><ol><li>Find matching place records.</li><li>Draft visits and check the details.</li><li>Revise a plan when a check fails.</li></ol><div class="legend"><span class="tag verified">Verified</span> Matches a dated source<br><span class="tag estimated">Estimated</span> Calculated with assumptions<br><span class="tag unknown">Unknown</span> Needs more information</div></div>
+<div id="results" hidden></div>
+</section>
+</div>
+<section class="scope-note"><h2>What this version can tell you</h2><p>Hours and prices come from saved official pages checked on November 13, 2026, with a 30-day planning window. Walking time is a distance estimate, not a street route. Check the linked museum pages before going. This app does not book tickets or check live availability.</p></section>
+</main>
+<footer><span>Mingjiao Diao · 1.125 Agentic Engineering</span><a href="https://github.com/diaomj668/1.125finalproject" target="_blank" rel="noreferrer">Project and sources ↗</a></footer>
+<script src="/app.js"></script>
+</body></html>
