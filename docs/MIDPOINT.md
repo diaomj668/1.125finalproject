@@ -30,7 +30,9 @@ The saved run on November 13, 2026 includes 20 requests. Eight end with no faile
 
 Ten first drafts with known rule violations were revised into drafts without those violations. Three of these revised plans still have unknown facts. This comparison is against a simple local ranked-list draft, not against an LLM. There were zero real Claude calls in the saved run.
 
-The test suite has 23 passing tests, including checks for overlap, closure dates, malformed IDs, party costs, shared admission, old facts and constraints that cannot be met. The full outputs are in `evidence/`.
+The test suite has 34 passing tests as of November 15, 2026, including checks for overlap, closure dates, malformed IDs, party costs, shared admission, old facts and constraints that cannot be met. The newer tests also send real HTTP requests to a local server and check that the API key stays out of its responses. The full saved scenario outputs are in `evidence/`.
+
+Windows startup and local key setup are now included. The three-case live verification script records actual model names, token usage and elapsed time when a key is available. Preparing this script is not the same as completing a real Claude run; that step remains open.
 
 ## Plan for the rest of the project
 

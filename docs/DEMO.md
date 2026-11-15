@@ -42,7 +42,7 @@ Click **Missing facts**. Explain that these places come from the wider 2021 reco
 
 ## 5. Explain results and next steps, about 50 seconds
 
-"I saved 20 test requests. Eight fit the stored facts and walking estimates, nine need changes, and three need more information. All 20 return the expected result for that test. I also have 23 tests for specific rules and failure cases.
+"I saved 20 test requests. Eight fit the stored facts and walking estimates, nine need changes, and three need more information. All 20 return the expected result for that test. I also have 34 tests for specific rules, local setup and server requests.
 
 The demonstration uses a local planner. I have written the Claude adapter, but I have not verified a real API call yet. That is the next step. After that, I will compare it with a plain chatbot using the same requests. I am leaving multi-day planning and taste ranking until the one-day checks are reliable."
 

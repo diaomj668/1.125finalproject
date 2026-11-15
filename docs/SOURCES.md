@@ -40,6 +40,7 @@ The app assumes standard adult admission without discounts. It counts the Natura
 - [Abel's proposal feedback](https://github.com/onexi/ps06/blob/main/diaomj668/feedback_abel.md)
 - [Anthropic API overview](https://platform.claude.com/docs/en/api/overview)
 - [Anthropic API primer](https://platform.claude.com/docs/en/claude_api_primer)
+- [Haiku 4.5 model and pricing](https://platform.claude.com/docs/en/models/haiku-4-5/overview), checked November 15, 2026; used only to estimate the cost of recorded live calls.
 
 Python's standard library is used for the app, server and tests. No paid routing service is used. The optional Claude model defaults to `claude-haiku-4-5-20251001` and can be changed with `ANTHROPIC_MODEL`. There were no real Claude API calls in the saved local evaluation.
 
