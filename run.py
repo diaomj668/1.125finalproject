@@ -3,12 +3,14 @@ import argparse
 import json
 import mimetypes
 import os
+import webbrowser
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlparse
 
 from trip_planner.catalog import Catalog
 from trip_planner.claude import ModelError
+from trip_planner.config import load_settings
 from trip_planner.models import InputError
 from trip_planner.planner import plan
 
@@ -68,11 +70,15 @@ class Handler(BaseHTTPRequestHandler):
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--port",type=int,default=8000)
+    parser.add_argument("--open-browser",action="store_true")
     args=parser.parse_args()
+    load_settings()
     Handler.catalog=Catalog()
     server=ThreadingHTTPServer(("127.0.0.1",args.port),Handler)
     print(f"Massachusetts Trip Planner: http://127.0.0.1:{args.port}",flush=True)
     print(f"Planner: {os.getenv('PLANNER_PROVIDER','local')}. Press Ctrl+C to stop.",flush=True)
+    if args.open_browser:
+        webbrowser.open(f"http://127.0.0.1:{args.port}")
     try:
         server.serve_forever()
     except KeyboardInterrupt:

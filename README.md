@@ -16,6 +16,8 @@ python run.py
 
 Open **http://127.0.0.1:8000**. There are no third-party Python packages to install for the app or tests. On Windows, `py run.py` also works if Python was installed with the launcher. Use `python run.py --port 8125` if port 8000 is in use.
 
+On Windows, double-click **start_windows.cmd** to start the server and open the app. Keep its terminal window open while using the app.
+
 Start with **Saturday closures**. The first draft includes two museums that are closed on Saturday. The revised plan replaces them, keeps the same budget, and includes enough time for the estimated walks.
 
 ## What works at the midpoint
@@ -49,7 +51,7 @@ python -m unittest discover -s tests -v
 python scripts/evaluate.py
 ```
 
-The November 13 run passed **23 tests**. All **20 saved scenarios** returned the expected outcome:
+The current suite passed **34 tests** on November 15, 2026, including local settings and HTTP requests to the running server. All **20 saved scenarios** from the November 13 evaluation returned the expected outcome:
 
 | Outcome | Scenarios |
 | --- | ---: |
@@ -63,7 +65,11 @@ See [the actual results](evidence/evaluation.json) and [the full saved plans](ev
 
 ## Optional Claude mode
 
-Set these environment variables in the same terminal before starting the server. Keep the key out of source files and GitHub. `.env.example` shows the names, but the app does not automatically load `.env` files.
+On Windows, double-click **configure_claude.cmd** and paste a Claude Console API key when prompted. The input is hidden. The script saves a local `.env` file that Git ignores. It does not call the API or buy credits. Then start the app with **start_windows.cmd**.
+
+Alternatively, copy `.env.example` to `.env`, set `PLANNER_PROVIDER=claude` and fill in `ANTHROPIC_API_KEY`. `run.py` now loads this file automatically. Existing shell settings take priority. Restart the server after changing settings.
+
+These shell commands also work:
 
 PowerShell:
 
@@ -84,6 +90,20 @@ python run.py
 ```
 
 This calls Anthropic's hosted API and may incur API charges. It does not deploy the website. The model proposes only place IDs and visit times. Python checks the proposal against the same records and can request up to two revisions. A model error is shown as an error; the app does not silently switch to the local planner. Free-form notes are sent only in Claude mode and are not interpreted in local mode.
+
+Check the settings without making a paid call:
+
+```bash
+python scripts/verify_claude.py
+```
+
+Once the key is configured, run three live integration cases (up to nine API calls):
+
+```bash
+python scripts/verify_claude.py --run
+```
+
+This saves `evidence/claude_live.json` with the actual outcomes, resolved model, token usage and elapsed time. Failed runs are labelled as failures. No live results are claimed until this command has run. See [local setup](docs/LOCAL_SETUP.md) for troubleshooting.
 
 ## Midpoint material
 
