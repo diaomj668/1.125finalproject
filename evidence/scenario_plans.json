@@ -22,6 +22,7 @@
       "provider_label": "Local planner (no LLM call)",
       "model": null,
       "model_usage": [],
+      "model_calls": [],
       "candidate_count": 5,
       "candidates": [
         {
@@ -1332,7 +1333,7 @@
         "orders_examined": 60,
         "search_timed_out": false
       },
-      "elapsed_seconds": 0.0,
+      "elapsed_seconds": 0.001,
       "walking_method": "Great-circle distance \u00d7 1.35, walking at 4 km/h, plus 5 minutes per leg. No street routing.",
       "snapshot_date": "2026-11-13",
       "limits": [
@@ -1366,6 +1367,7 @@
       "provider_label": "Local planner (no LLM call)",
       "model": null,
       "model_usage": [],
+      "model_calls": [],
       "candidate_count": 5,
       "candidates": [
         {
@@ -2686,7 +2688,7 @@
         "orders_examined": 60,
         "search_timed_out": false
       },
-      "elapsed_seconds": 0.015,
+      "elapsed_seconds": 0.003,
       "walking_method": "Great-circle distance \u00d7 1.35, walking at 4 km/h, plus 5 minutes per leg. No street routing.",
       "snapshot_date": "2026-11-13",
       "limits": [
@@ -2720,6 +2722,7 @@
       "provider_label": "Local planner (no LLM call)",
       "model": null,
       "model_usage": [],
+      "model_calls": [],
       "candidate_count": 5,
       "candidates": [
         {
@@ -3708,7 +3711,7 @@
         "orders_examined": 20,
         "search_timed_out": false
       },
-      "elapsed_seconds": 0.0,
+      "elapsed_seconds": 0.001,
       "walking_method": "Great-circle distance \u00d7 1.35, walking at 4 km/h, plus 5 minutes per leg. No street routing.",
       "snapshot_date": "2026-11-13",
       "limits": [
@@ -3742,6 +3745,7 @@
       "provider_label": "Local planner (no LLM call)",
       "model": null,
       "model_usage": [],
+      "model_calls": [],
       "candidate_count": 5,
       "candidates": [
         {
@@ -5206,7 +5210,7 @@
         "orders_examined": 120,
         "search_timed_out": false
       },
-      "elapsed_seconds": 0.0,
+      "elapsed_seconds": 0.001,
       "walking_method": "Great-circle distance \u00d7 1.35, walking at 4 km/h, plus 5 minutes per leg. No street routing.",
       "snapshot_date": "2026-11-13",
       "limits": [
@@ -5240,6 +5244,7 @@
       "provider_label": "Local planner (no LLM call)",
       "model": null,
       "model_usage": [],
+      "model_calls": [],
       "candidate_count": 5,
       "candidates": [
         {
@@ -6116,7 +6121,7 @@
         "orders_examined": 60,
         "search_timed_out": false
       },
-      "elapsed_seconds": 0.0,
+      "elapsed_seconds": 0.001,
       "walking_method": "Great-circle distance \u00d7 1.35, walking at 4 km/h, plus 5 minutes per leg. No street routing.",
       "snapshot_date": "2026-11-13",
       "limits": [
@@ -6150,6 +6155,7 @@
       "provider_label": "Local planner (no LLM call)",
       "model": null,
       "model_usage": [],
+      "model_calls": [],
       "candidate_count": 5,
       "candidates": [
         {
@@ -6769,6 +6775,7 @@
       "provider_label": "Local planner (no LLM call)",
       "model": null,
       "model_usage": [],
+      "model_calls": [],
       "candidate_count": 5,
       "candidates": [
         {
@@ -7398,6 +7405,7 @@
       "provider_label": "Local planner (no LLM call)",
       "model": null,
       "model_usage": [],
+      "model_calls": [],
       "candidate_count": 5,
       "candidates": [
         {
@@ -8037,6 +8045,7 @@
       "provider_label": "Local planner (no LLM call)",
       "model": null,
       "model_usage": [],
+      "model_calls": [],
       "candidate_count": 5,
       "candidates": [
         {
@@ -9030,7 +9039,7 @@
         "orders_examined": 20,
         "search_timed_out": false
       },
-      "elapsed_seconds": 0.0,
+      "elapsed_seconds": 0.001,
       "walking_method": "Great-circle distance \u00d7 1.35, walking at 4 km/h, plus 5 minutes per leg. No street routing.",
       "snapshot_date": "2026-11-13",
       "limits": [
@@ -9064,6 +9073,7 @@
       "provider_label": "Local planner (no LLM call)",
       "model": null,
       "model_usage": [],
+      "model_calls": [],
       "candidate_count": 5,
       "candidates": [
         {
@@ -9703,6 +9713,7 @@
       "provider_label": "Local planner (no LLM call)",
       "model": null,
       "model_usage": [],
+      "model_calls": [],
       "candidate_count": 5,
       "candidates": [
         {
@@ -10308,7 +10319,7 @@
         "orders_examined": 20,
         "search_timed_out": false
       },
-      "elapsed_seconds": 0.0,
+      "elapsed_seconds": 0.001,
       "walking_method": "Great-circle distance \u00d7 1.35, walking at 4 km/h, plus 5 minutes per leg. No street routing.",
       "snapshot_date": "2026-11-13",
       "limits": [
@@ -10342,6 +10353,7 @@
       "provider_label": "Local planner (no LLM call)",
       "model": null,
       "model_usage": [],
+      "model_calls": [],
       "candidate_count": 5,
       "candidates": [
         {
@@ -11223,7 +11235,7 @@
         "orders_examined": 20,
         "search_timed_out": false
       },
-      "elapsed_seconds": 0.0,
+      "elapsed_seconds": 0.001,
       "walking_method": "Great-circle distance \u00d7 1.35, walking at 4 km/h, plus 5 minutes per leg. No street routing.",
       "snapshot_date": "2026-11-13",
       "limits": [
@@ -11257,6 +11269,7 @@
       "provider_label": "Local planner (no LLM call)",
       "model": null,
       "model_usage": [],
+      "model_calls": [],
       "candidate_count": 5,
       "candidates": [
         {
@@ -12731,7 +12744,7 @@
         "orders_examined": 120,
         "search_timed_out": false
       },
-      "elapsed_seconds": 0.0,
+      "elapsed_seconds": 0.007,
       "walking_method": "Great-circle distance \u00d7 1.35, walking at 4 km/h, plus 5 minutes per leg. No street routing.",
       "snapshot_date": "2026-11-13",
       "limits": [
@@ -12765,6 +12778,7 @@
       "provider_label": "Local planner (no LLM call)",
       "model": null,
       "model_usage": [],
+      "model_calls": [],
       "candidate_count": 5,
       "candidates": [
         {
@@ -14957,7 +14971,7 @@
         "orders_examined": 120,
         "search_timed_out": false
       },
-      "elapsed_seconds": 0.016,
+      "elapsed_seconds": 0.008,
       "walking_method": "Great-circle distance \u00d7 1.35, walking at 4 km/h, plus 5 minutes per leg. No street routing.",
       "snapshot_date": "2026-11-13",
       "limits": [
@@ -14993,6 +15007,7 @@
       "provider_label": "Local planner (no LLM call)",
       "model": null,
       "model_usage": [],
+      "model_calls": [],
       "candidate_count": 4,
       "candidates": [
         {
@@ -15732,6 +15747,7 @@
       "provider_label": "Local planner (no LLM call)",
       "model": null,
       "model_usage": [],
+      "model_calls": [],
       "candidate_count": 1,
       "candidates": [
         {
@@ -15750,28 +15766,14 @@
           "detail": "Found 1 matching Cambridge records (up to 10)."
         },
         {
-          "step": "Draft plan",
-          "detail": "Local baseline used the top-ranked records, one hour per stop."
-        },
-        {
-          "step": "Check plan",
-          "detail": "1 failed checks; 0 unknown checks."
-        },
-        {
           "step": "Stop",
-          "detail": "No one-hour-per-stop plan fits these constraints in the retrieved records. Try fewer stops, more time, or a different date."
+          "detail": "Only 1 matching record(s) were retrieved for 2 stops. Try fewer stops or broader interests."
         }
       ],
       "attempts": [
         {
           "attempt": 0,
-          "draft": [
-            {
-              "place_id": "0x89e37746d15ee397:0x120a9da97291d878",
-              "start": "11:00",
-              "duration_minutes": 60
-            }
-          ],
+          "draft": [],
           "result": {
             "checks": [
               {
@@ -15789,31 +15791,10 @@
                 "place_id": null
               },
               {
-                "rule": "time_window",
-                "result": "pass",
-                "evidence": "verified",
-                "message": "Within the requested time window.",
-                "place_id": "0x89e37746d15ee397:0x120a9da97291d878"
-              },
-              {
-                "rule": "opening_hours",
-                "result": "pass",
-                "evidence": "verified",
-                "message": "Visit fits published hours in the dated snapshot.",
-                "place_id": "0x89e37746d15ee397:0x120a9da97291d878"
-              },
-              {
-                "rule": "admission",
-                "result": "pass",
-                "evidence": "verified",
-                "message": "Uses the dated adult admission price. Shared tickets are counted once.",
-                "place_id": "0x89e37746d15ee397:0x120a9da97291d878"
-              },
-              {
                 "rule": "budget",
                 "result": "pass",
                 "evidence": "verified",
-                "message": "Admission for 1 adult(s): $20 / $40. Meals and shopping are excluded.",
+                "message": "Admission for 1 adult(s): $0 / $40. Meals and shopping are excluded.",
                 "place_id": null
               },
               {
@@ -15824,122 +15805,12 @@
                 "place_id": null
               }
             ],
-            "stops": [
-              {
-                "place_id": "0x89e37746d15ee397:0x120a9da97291d878",
-                "name": "Peabody Museum of Archaeology and Ethnology",
-                "start": "11:00",
-                "end": "12:00",
-                "duration_minutes": 60,
-                "walk_before": null,
-                "charged_admission_usd": 20,
-                "record": {
-                  "place_id": "0x89e37746d15ee397:0x120a9da97291d878",
-                  "name": "Peabody Museum of Archaeology and Ethnology",
-                  "city": "Cambridge",
-                  "category": "culture",
-                  "categories": [
-                    "Museum",
-                    "Tourist attraction"
-                  ],
-                  "address": "Peabody Museum of Archaeology and Ethnology, 11 Divinity Ave, Cambridge, MA 02138",
-                  "latitude": 42.378195999999996,
-                  "longitude": -71.11493,
-                  "rating": 4.6,
-                  "review_count": 435,
-                  "price": null,
-                  "historical_hours": [
-                    [
-                      "Saturday",
-                      "9AM\u20135PM"
-                    ],
-                    [
-                      "Sunday",
-                      "9AM\u20135PM"
-                    ],
-                    [
-                      "Monday",
-                      "9AM\u20135PM"
-                    ],
-                    [
-                      "Tuesday",
-                      "9AM\u20135PM"
-                    ],
-                    [
-                      "Wednesday",
-                      "9AM\u20135PM"
-                    ],
-                    [
-                      "Thursday",
-                      "9AM\u20135PM"
-                    ],
-                    [
-                      "Friday",
-                      "9AM\u20135PM"
-                    ]
-                  ],
-                  "description": "Harvard museum with ancient cultures' artifacts & archeology, plus access to Natural History Museum.",
-                  "source_url": "https://www.google.com/maps?cid=1300024793547004024",
-                  "source_snapshot": "Google Local 2021",
-                  "metadata_source_line": 74943,
-                  "sampled_review_count": 6,
-                  "facts": {
-                    "hours": [
-                      [
-                        "09:00",
-                        "17:00"
-                      ]
-                    ],
-                    "hours_status": "verified",
-                    "admission_usd": 20,
-                    "price_status": "verified",
-                    "ticket_group": "hmnh-peabody",
-                    "source_urls": [
-                      "https://peabody.harvard.edu/hours-admission",
-                      "https://www.hmnh.harvard.edu/plan-your-visit"
-                    ],
-                    "checked_at": "2026-11-13",
-                    "historical_hours": [
-                      [
-                        "Saturday",
-                        "9AM\u20135PM"
-                      ],
-                      [
-                        "Sunday",
-                        "9AM\u20135PM"
-                      ],
-                      [
-                        "Monday",
-                        "9AM\u20135PM"
-                      ],
-                      [
-                        "Tuesday",
-                        "9AM\u20135PM"
-                      ],
-                      [
-                        "Wednesday",
-                        "9AM\u20135PM"
-                      ],
-                      [
-                        "Thursday",
-                        "9AM\u20135PM"
-                      ],
-                      [
-                        "Friday",
-                        "9AM\u20135PM"
-                      ]
-                    ],
-                    "historical_price_category": null,
-                    "note": "Standard adult admission. The joint ticket includes the Harvard Museum of Natural History; charge this group only once."
-                  }
-                }
-              }
-            ],
+            "stops": [],
             "has_failures": true,
             "has_unknowns": false,
             "status": "needs_change",
-            "total_admission_usd": 20,
-            "known_admission_usd": 20,
+            "total_admission_usd": 0,
+            "known_admission_usd": 0,
             "walking_minutes": 0,
             "failure_count": 1,
             "unknown_count": 0
@@ -15963,31 +15834,10 @@
             "place_id": null
           },
           {
-            "rule": "time_window",
-            "result": "pass",
-            "evidence": "verified",
-            "message": "Within the requested time window.",
-            "place_id": "0x89e37746d15ee397:0x120a9da97291d878"
-          },
-          {
-            "rule": "opening_hours",
-            "result": "pass",
-            "evidence": "verified",
-            "message": "Visit fits published hours in the dated snapshot.",
-            "place_id": "0x89e37746d15ee397:0x120a9da97291d878"
-          },
-          {
-            "rule": "admission",
-            "result": "pass",
-            "evidence": "verified",
-            "message": "Uses the dated adult admission price. Shared tickets are counted once.",
-            "place_id": "0x89e37746d15ee397:0x120a9da97291d878"
-          },
-          {
             "rule": "budget",
             "result": "pass",
             "evidence": "verified",
-            "message": "Admission for 1 adult(s): $20 / $40. Meals and shopping are excluded.",
+            "message": "Admission for 1 adult(s): $0 / $40. Meals and shopping are excluded.",
             "place_id": null
           },
           {
@@ -15998,130 +15848,17 @@
             "place_id": null
           }
         ],
-        "stops": [
-          {
-            "place_id": "0x89e37746d15ee397:0x120a9da97291d878",
-            "name": "Peabody Museum of Archaeology and Ethnology",
-            "start": "11:00",
-            "end": "12:00",
-            "duration_minutes": 60,
-            "walk_before": null,
-            "charged_admission_usd": 20,
-            "record": {
-              "place_id": "0x89e37746d15ee397:0x120a9da97291d878",
-              "name": "Peabody Museum of Archaeology and Ethnology",
-              "city": "Cambridge",
-              "category": "culture",
-              "categories": [
-                "Museum",
-                "Tourist attraction"
-              ],
-              "address": "Peabody Museum of Archaeology and Ethnology, 11 Divinity Ave, Cambridge, MA 02138",
-              "latitude": 42.378195999999996,
-              "longitude": -71.11493,
-              "rating": 4.6,
-              "review_count": 435,
-              "price": null,
-              "historical_hours": [
-                [
-                  "Saturday",
-                  "9AM\u20135PM"
-                ],
-                [
-                  "Sunday",
-                  "9AM\u20135PM"
-                ],
-                [
-                  "Monday",
-                  "9AM\u20135PM"
-                ],
-                [
-                  "Tuesday",
-                  "9AM\u20135PM"
-                ],
-                [
-                  "Wednesday",
-                  "9AM\u20135PM"
-                ],
-                [
-                  "Thursday",
-                  "9AM\u20135PM"
-                ],
-                [
-                  "Friday",
-                  "9AM\u20135PM"
-                ]
-              ],
-              "description": "Harvard museum with ancient cultures' artifacts & archeology, plus access to Natural History Museum.",
-              "source_url": "https://www.google.com/maps?cid=1300024793547004024",
-              "source_snapshot": "Google Local 2021",
-              "metadata_source_line": 74943,
-              "sampled_review_count": 6,
-              "facts": {
-                "hours": [
-                  [
-                    "09:00",
-                    "17:00"
-                  ]
-                ],
-                "hours_status": "verified",
-                "admission_usd": 20,
-                "price_status": "verified",
-                "ticket_group": "hmnh-peabody",
-                "source_urls": [
-                  "https://peabody.harvard.edu/hours-admission",
-                  "https://www.hmnh.harvard.edu/plan-your-visit"
-                ],
-                "checked_at": "2026-11-13",
-                "historical_hours": [
-                  [
-                    "Saturday",
-                    "9AM\u20135PM"
-                  ],
-                  [
-                    "Sunday",
-                    "9AM\u20135PM"
-                  ],
-                  [
-                    "Monday",
-                    "9AM\u20135PM"
-                  ],
-                  [
-                    "Tuesday",
-                    "9AM\u20135PM"
-                  ],
-                  [
-                    "Wednesday",
-                    "9AM\u20135PM"
-                  ],
-                  [
-                    "Thursday",
-                    "9AM\u20135PM"
-                  ],
-                  [
-                    "Friday",
-                    "9AM\u20135PM"
-                  ]
-                ],
-                "historical_price_category": null,
-                "note": "Standard adult admission. The joint ticket includes the Harvard Museum of Natural History; charge this group only once."
-              }
-            }
-          }
-        ],
+        "stops": [],
         "has_failures": true,
         "has_unknowns": false,
         "status": "needs_change",
-        "total_admission_usd": 20,
-        "known_admission_usd": 20,
+        "total_admission_usd": 0,
+        "known_admission_usd": 0,
         "walking_minutes": 0,
         "failure_count": 1,
         "unknown_count": 0
       },
-      "search": {
-        "orders_examined": 0,
-        "search_timed_out": false
-      },
+      "search": {},
       "elapsed_seconds": 0.0,
       "walking_method": "Great-circle distance \u00d7 1.35, walking at 4 km/h, plus 5 minutes per leg. No street routing.",
       "snapshot_date": "2026-11-13",
@@ -16156,6 +15893,7 @@
       "provider_label": "Local planner (no LLM call)",
       "model": null,
       "model_usage": [],
+      "model_calls": [],
       "candidate_count": 5,
       "candidates": [
         {
@@ -17040,6 +16778,7 @@
       "provider_label": "Local planner (no LLM call)",
       "model": null,
       "model_usage": [],
+      "model_calls": [],
       "candidate_count": 10,
       "candidates": [
         {
@@ -18090,7 +17829,7 @@
         "orders_examined": 90,
         "search_timed_out": false
       },
-      "elapsed_seconds": 0.0,
+      "elapsed_seconds": 0.003,
       "walking_method": "Great-circle distance \u00d7 1.35, walking at 4 km/h, plus 5 minutes per leg. No street routing.",
       "snapshot_date": "2026-11-13",
       "limits": [
@@ -18123,6 +17862,7 @@
       "provider_label": "Local planner (no LLM call)",
       "model": null,
       "model_usage": [],
+      "model_calls": [],
       "candidate_count": 10,
       "candidates": [
         {
@@ -19087,7 +18827,7 @@
         "orders_examined": 90,
         "search_timed_out": false
       },
-      "elapsed_seconds": 0.0,
+      "elapsed_seconds": 0.002,
       "walking_method": "Great-circle distance \u00d7 1.35, walking at 4 km/h, plus 5 minutes per leg. No street routing.",
       "snapshot_date": "2026-11-13",
       "limits": [
@@ -19121,6 +18861,7 @@
       "provider_label": "Local planner (no LLM call)",
       "model": null,
       "model_usage": [],
+      "model_calls": [],
       "candidate_count": 5,
       "candidates": [
         {

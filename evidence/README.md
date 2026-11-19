@@ -4,6 +4,6 @@
 
 `scenario_plans.json` has the input, retrieved records, first draft, checks, revision and final result for each scenario.
 
-These files were produced by `python scripts/evaluate.py` on November 13, 2026. The run used the local planner and made no real Claude API calls. Rerunning the script replaces the evidence with a fresh run.
+These files were produced by `python scripts/evaluate.py`, most recently on November 18, 2026 (the run time is in `evaluation.json`). The first run was on November 13, 2026. All 20 outcomes matched in both runs. The run used the local planner and made no real Claude API calls. Rerunning the script replaces the evidence with a fresh run.
 
-`claude_live.json` is created only when `python scripts/verify_claude.py --run` is used with a configured key. Its contents distinguish a failed attempt from completed live cases. If the file is absent, no live API evidence has been saved.
+`claude_live.json` was created by `python scripts/verify_claude.py --run` on November 16, 2026 (Boston time), with a configured key. It records three completed live cases: nine calls in total, and one case matching the expected outcome. Its contents distinguish a failed attempt from completed cases.

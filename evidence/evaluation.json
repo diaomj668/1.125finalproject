@@ -1,5 +1,5 @@
 {
-  "run_at_utc": "2026-11-13T17:18:31.949048+00:00",
+  "run_at_utc": "2026-11-19T01:35:06.886851+00:00",
   "provider": "local",
   "scenario_count": 20,
   "expected_outcomes_matched": 20,
@@ -9,8 +9,8 @@
   "fits_estimates": 8,
   "needs_change": 9,
   "needs_confirmation": 3,
-  "median_seconds": 0.0,
-  "max_seconds": 0.016,
+  "median_seconds": 0.001,
+  "max_seconds": 0.008,
   "real_claude_calls": 0,
   "interpretation": "These are saved regression cases for the local planner, not a user study or a Claude-versus-chatbot benchmark.",
   "outcomes": [
@@ -28,7 +28,7 @@
       "final_failed_checks": 0,
       "final_unknown_checks": 0,
       "attempts": 2,
-      "elapsed_seconds": 0.0,
+      "elapsed_seconds": 0.001,
       "admission_usd": 20,
       "walking_minutes": 22
     },
@@ -46,7 +46,7 @@
       "final_failed_checks": 0,
       "final_unknown_checks": 0,
       "attempts": 2,
-      "elapsed_seconds": 0.015,
+      "elapsed_seconds": 0.003,
       "admission_usd": 0,
       "walking_minutes": 22
     },
@@ -65,7 +65,7 @@
       "final_failed_checks": 0,
       "final_unknown_checks": 0,
       "attempts": 2,
-      "elapsed_seconds": 0.0,
+      "elapsed_seconds": 0.001,
       "admission_usd": 0,
       "walking_minutes": 10
     },
@@ -84,7 +84,7 @@
       "final_failed_checks": 3,
       "final_unknown_checks": 0,
       "attempts": 1,
-      "elapsed_seconds": 0.0,
+      "elapsed_seconds": 0.001,
       "admission_usd": 20,
       "walking_minutes": 36
     },
@@ -102,7 +102,7 @@
       "final_failed_checks": 3,
       "final_unknown_checks": 0,
       "attempts": 1,
-      "elapsed_seconds": 0.0,
+      "elapsed_seconds": 0.001,
       "admission_usd": 0,
       "walking_minutes": 22
     },
@@ -178,7 +178,7 @@
       "final_failed_checks": 0,
       "final_unknown_checks": 0,
       "attempts": 2,
-      "elapsed_seconds": 0.0,
+      "elapsed_seconds": 0.001,
       "admission_usd": 20,
       "walking_minutes": 10
     },
@@ -217,7 +217,7 @@
       "final_failed_checks": 2,
       "final_unknown_checks": 0,
       "attempts": 1,
-      "elapsed_seconds": 0.0,
+      "elapsed_seconds": 0.001,
       "admission_usd": 0,
       "walking_minutes": 12
     },
@@ -236,7 +236,7 @@
       "final_failed_checks": 0,
       "final_unknown_checks": 0,
       "attempts": 2,
-      "elapsed_seconds": 0.0,
+      "elapsed_seconds": 0.001,
       "admission_usd": 0,
       "walking_minutes": 12
     },
@@ -258,7 +258,7 @@
       "final_failed_checks": 4,
       "final_unknown_checks": 0,
       "attempts": 1,
-      "elapsed_seconds": 0.0,
+      "elapsed_seconds": 0.007,
       "admission_usd": 40,
       "walking_minutes": 36
     },
@@ -280,7 +280,7 @@
       "final_failed_checks": 0,
       "final_unknown_checks": 0,
       "attempts": 2,
-      "elapsed_seconds": 0.016,
+      "elapsed_seconds": 0.008,
       "admission_usd": 40,
       "walking_minutes": 36
     },
@@ -327,7 +327,7 @@
       "final_unknown_checks": 0,
       "attempts": 1,
       "elapsed_seconds": 0.0,
-      "admission_usd": 20,
+      "admission_usd": 0,
       "walking_minutes": 0
     },
     {
@@ -366,7 +366,7 @@
       "final_failed_checks": 0,
       "final_unknown_checks": 5,
       "attempts": 2,
-      "elapsed_seconds": 0.0,
+      "elapsed_seconds": 0.003,
       "admission_usd": null,
       "walking_minutes": 9
     },
@@ -391,7 +391,7 @@
       "final_failed_checks": 0,
       "final_unknown_checks": 3,
       "attempts": 2,
-      "elapsed_seconds": 0.0,
+      "elapsed_seconds": 0.002,
       "admission_usd": null,
       "walking_minutes": 28
     },
