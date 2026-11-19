@@ -30,7 +30,7 @@ Start with **Saturday closures**. The first draft includes two museums that are 
 - Leave out a stop and build another plan.
 - Show sources, failed checks and unknown facts. Save the full result as JSON.
 
-The default is a **local, rule-based planner**. It does not call an LLM. An optional Claude adapter is included and has been run live once, on November 16, 2026 (Boston time), on three saved requests. Nine Haiku 4.5 calls were recorded, costing about $0.05 at the listed rates. One of the three results matched the expected outcome; the other two still ended with failed checks after revision. The results are in [the live evidence file](evidence/claude_live.json). The app always shows which mode is running.
+The default is a **local, rule-based planner**. It does not call an LLM. An optional Claude adapter is included and has been run live on three saved requests. An earlier prompt was run once on November 16, 2026 (Boston time): nine calls, about $0.05, and one of three matched the expected outcome. The prompt was then revised, and three repeated runs on November 18, 2026 each used five calls, about $0.02, and matched all three. The revision was tuned on these same three requests, so these results do not show how it performs on other requests. The results are in [the live evidence file](evidence/claude_live.json) and [the repeated runs](evidence/live_runs/). The app always shows which mode is running.
 
 ## What the labels mean
 
@@ -51,7 +51,7 @@ python -m unittest discover -s tests -v
 python scripts/evaluate.py
 ```
 
-The current suite passed **39 tests** on November 18, 2026, including local settings and HTTP requests to the running server. All **20 saved scenarios** from the November 13 evaluation returned the expected outcome:
+The current suite passed **42 tests** on November 18, 2026, including local settings and HTTP requests to the running server. All **20 saved scenarios** from the November 13 evaluation returned the expected outcome:
 
 | Outcome | Scenarios |
 | --- | ---: |
@@ -103,7 +103,7 @@ Once the key is configured, run three live integration cases (up to nine API cal
 python scripts/verify_claude.py --run
 ```
 
-This saves `evidence/claude_live.json` with the actual outcomes, resolved model, token usage and elapsed time. Failed runs are labelled as failures. The saved file records the November 16 run described above. See [local setup](docs/LOCAL_SETUP.md) for troubleshooting.
+This saves `evidence/claude_live.json` with the actual outcomes, resolved model, token usage and elapsed time. Failed runs are labelled as failures. The saved file holds the most recent of the three November 18 runs; the others are in `evidence/live_runs/`. See [local setup](docs/LOCAL_SETUP.md) for troubleshooting.
 
 ## Midpoint material
 
@@ -114,6 +114,6 @@ This saves `evidence/claude_live.json` with the actual outcomes, resolved model,
 
 ## What remains
 
-My next step is to fix the Claude revision failures recorded in the live evidence file, then compare its draft with a plain chatbot on the same 20 requests. I also need to inspect a few walking estimates against real routes. Review-based taste ranking and multi-day trips are later extensions. I will only add them after the one-day version is reliable.
+My next steps are to test the revised Claude prompt on the saved requests it was not tuned on, then compare its draft with a plain chatbot on the same requests. I also need to inspect a few walking estimates against real routes. Review-based taste ranking and multi-day trips are later extensions. I will only add them after the one-day version is reliable.
 
 The starting place records and some planning ideas come from the AC215 RoamWise project. This version narrows the scope and adds a small set of checked museum facts, explicit uncertainty labels, shared-ticket handling and saved midpoint scenarios. The source list explains the reuse.

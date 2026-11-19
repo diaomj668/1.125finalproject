@@ -6,7 +6,7 @@ from unittest.mock import patch
 
 from trip_planner.catalog import Catalog
 from trip_planner.checker import check_plan
-from trip_planner.claude import ClaudePlanner, ModelError
+from trip_planner.claude import ClaudePlanner, ModelError, build_payload
 from trip_planner.geometry import walking_minutes
 from trip_planner.models import TripRequest, InputError
 from trip_planner.planner import plan
@@ -169,6 +169,43 @@ class PlannerTests(unittest.TestCase):
         self.assertTrue(any('Only 1 matching record' in d for d in details))
         self.assertFalse(any('No one-hour-per-stop plan fits' in d for d in details))
         self.assertEqual(out['result']['status'],'needs_change')
+
+    def _claude_reply(self, stops):
+        body={'content':[{'type':'text','text':json.dumps({'stops':stops})}],'stop_reason':'end_turn','usage':{}}
+        return json.dumps(body).encode()
+
+    def test_claude_prompt_gets_precomputed_walks_and_no_coordinates(self):
+        request=self.request(date='2026-11-14',stop_count=2)
+        records={p:self.catalog.record(p,request.date) for p in [ART,CHSI,HMNH]}
+        body=build_payload(request,records)
+        self.assertEqual(len(body['walk_minutes']),6)
+        self.assertNotIn('latitude',json.dumps(body))
+        closed=[p for p in body['places'] if p['hours_today']=='closed']
+        self.assertTrue(closed)  # Saturday closures are passed as facts, not left to the model
+
+    def test_claude_visit_length_is_fixed_and_request_is_sent_once(self):
+        with patch.dict(os.environ,{'ANTHROPIC_API_KEY':'unit-test-placeholder'}):
+            engine=ClaudePlanner()
+        request=self.request(date='2026-11-18',stop_count=2)
+        records={p:self.catalog.record(p,request.date) for p in [ART,CHSI]}
+        reply=self._claude_reply([{'place_id':ART,'start':'11:00','duration_minutes':150},
+                                  {'place_id':CHSI,'start':'13:30'}])
+        with patch('urllib.request.urlopen') as mock:
+            mock.return_value.__enter__.return_value.read.return_value=reply
+            stops=engine.generate(request,records)
+            sent=json.loads(mock.call_args[0][0].data.decode())
+        self.assertEqual([s['duration_minutes'] for s in stops],[60,60])
+        self.assertIn('walk_minutes',sent['messages'][0]['content'])
+
+    def test_revision_names_the_failing_stop(self):
+        request=self.request(date='2026-11-14',stop_count=2)
+        records={p:self.catalog.record(p,request.date) for p in [ART,CHSI]}
+        previous={'checks':[{'rule':'opening_hours','result':'fail','evidence':'verified',
+                             'message':'The saved official schedule says closed on this date.','place_id':CHSI}],
+                  'stops':[{'place_id':CHSI,'name':'Collection of Historical Scientific Instruments','start':'13:20'}]}
+        body=build_payload(request,records,previous)
+        self.assertIn('Collection of Historical',json.dumps(body['previous_check']['previous_draft']))
+        self.assertTrue(body['previous_check']['failures'][0].endswith('(' + records[CHSI]['name'] + ')'))
 
     def test_too_few_records_skips_claude_calls(self):
         # No key is set: if a model call were attempted, this would raise ModelError.
