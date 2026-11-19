@@ -23,5 +23,6 @@ def load_settings(path=None, environ=None):
             continue
         if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
             value = value[1:-1]
-        if name not in target:
+        # Empty shell values count as unset, so the local .env can still supply them.
+        if not target.get(name):
             target[name] = value

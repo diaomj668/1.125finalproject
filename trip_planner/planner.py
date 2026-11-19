@@ -81,9 +81,16 @@ def plan(value,catalog=None,provider=None):
     engine=ClaudePlanner() if provider=="claude" else None
     attempts=[]
     search={}
-    draft=engine.generate(request,records) if engine else first_draft(request,candidates)
-    trace.append({"step":"Draft plan","detail":"Claude drafted the stops and times." if engine else "Local baseline used the top-ranked records, one hour per stop."})
-    for attempt in range(3 if engine else 2):
+    # Too few retrieved records is a data limit, not a conflict with the request.
+    # Stop before any model call, so no paid draft is requested for an impossible set.
+    too_few=len(candidates)<request.stop_count
+    if too_few:
+        trace.append({"step":"Stop","detail":f"Only {len(candidates)} matching record(s) were retrieved for {request.stop_count} stops. Try fewer stops or broader interests."})
+        draft=[]
+    else:
+        draft=engine.generate(request,records) if engine else first_draft(request,candidates)
+        trace.append({"step":"Draft plan","detail":"Claude drafted the stops and times." if engine else "Local baseline used the top-ranked records, one hour per stop."})
+    for attempt in range(0 if too_few else (3 if engine else 2)):
         ids=[s["place_id"] for s in draft]
         checked=check_plan(request,draft,records,catalog.estimate_walk(ids))
         attempts.append({"attempt":attempt,"draft":draft,"result":checked})
@@ -97,7 +104,8 @@ def plan(value,catalog=None,provider=None):
             if time.monotonic()-started>60:
                 trace.append({"step":"Stop","detail":"The model-call time budget has been reached."})
                 break
-            draft=engine.generate(request,records,previous=checked)
+            remaining=60-(time.monotonic()-started)
+            draft=engine.generate(request,records,previous=checked,timeout=min(25,remaining))
         else:
             repaired,search=revise_local(request,candidates,records,catalog,started+20)
             if repaired is None:
@@ -107,6 +115,9 @@ def plan(value,catalog=None,provider=None):
                 break
             draft=repaired
         trace.append({"step":"Revise plan","detail":"Revised stops or times using the failed checks. The request stayed the same."})
+    if not attempts:
+        # Nothing could be checked; report the empty draft as needing changes.
+        attempts.append({"attempt":0,"draft":draft,"result":check_plan(request,draft,records,[])})
     final=attempts[-1]["result"]
     return {"request":request.to_dict(),"provider":provider,
             "provider_label":"Claude API" if engine else "Local planner (no LLM call)",

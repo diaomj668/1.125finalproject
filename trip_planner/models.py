@@ -58,10 +58,10 @@ class TripRequest:
             raise InputError("Admission budget must be between $0 and $1,000.")
         if req.source_mode not in ("checked", "historical"):
             raise InputError("Choose checked or historical data.")
-        if (not isinstance(req.interests, list) or not 1 <= len(req.interests) <= 5
+        if (not isinstance(req.interests, list) or not 1 <= len(req.interests) <= 6
                 or any(x not in ("museums", "art", "science", "history", "nature", "food") for x in req.interests)):
-            raise InputError("Choose between one and five supported interests.")
-        if not isinstance(req.excluded_ids, list) or len(req.excluded_ids) > 20 or any(not isinstance(x, str) or len(x)>150 for x in req.excluded_ids):
+            raise InputError("Choose between one and six supported interests.")
+        if not isinstance(req.excluded_ids, list) or len(req.excluded_ids) > 50 or any(not isinstance(x, str) or len(x)>150 for x in req.excluded_ids):
             raise InputError("Invalid excluded place IDs.")
         if not isinstance(req.notes, str) or len(req.notes) > 500:
             raise InputError("Notes must be at most 500 characters.")

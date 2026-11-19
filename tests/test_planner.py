@@ -1,4 +1,3 @@
-import copy
 import json
 import os
 from pathlib import Path
@@ -151,6 +150,45 @@ class PlannerTests(unittest.TestCase):
             with self.subTest(case=case['id']):
                 out=plan(case['request'],self.catalog,provider='local')
                 self.assertEqual(out['result']['status'],case['expected_status'])
+
+    def test_all_six_interests_are_accepted(self):
+        request=TripRequest.parse({'date':'2026-11-18','interests':['museums','art','science','history','nature','food']})
+        self.assertEqual(len(request.interests),6)
+        with self.assertRaises(InputError):
+            TripRequest.parse({'date':'2026-11-18','interests':['museums','art','science','history','nature','food','museums']})
+
+    def test_exclusion_cap_allows_fifty_ids(self):
+        ids=[f'place-{i}' for i in range(50)]
+        self.assertEqual(len(TripRequest.parse({'date':'2026-11-18','excluded_ids':ids}).excluded_ids),50)
+        with self.assertRaises(InputError):
+            TripRequest.parse({'date':'2026-11-18','excluded_ids':ids+['one-more']})
+
+    def test_too_few_records_reports_data_limit_not_constraints(self):
+        out=plan({'date':'2026-11-18','interests':['food'],'stop_count':2},self.catalog,provider='local')
+        details=[t['detail'] for t in out['trace']]
+        self.assertTrue(any('Only 1 matching record' in d for d in details))
+        self.assertFalse(any('No one-hour-per-stop plan fits' in d for d in details))
+        self.assertEqual(out['result']['status'],'needs_change')
+
+    def test_too_few_records_skips_claude_calls(self):
+        # No key is set: if a model call were attempted, this would raise ModelError.
+        with patch.dict(os.environ,{'ANTHROPIC_API_KEY':''}):
+            out=plan({'date':'2026-11-18','interests':['food'],'stop_count':2},self.catalog,provider='claude')
+        self.assertEqual(out['model_calls'],[])
+        self.assertEqual(out['result']['status'],'needs_change')
+
+    def test_empty_shell_value_does_not_block_dotenv(self):
+        import tempfile
+        from trip_planner.config import load_settings
+        with tempfile.TemporaryDirectory() as folder:
+            path=Path(folder)/'.env'
+            path.write_text('ANTHROPIC_API_KEY=sk-ant-from-file\n',encoding='utf-8')
+            env={'ANTHROPIC_API_KEY':''}
+            load_settings(path,env)
+            self.assertEqual(env['ANTHROPIC_API_KEY'],'sk-ant-from-file')
+            explicit={'ANTHROPIC_API_KEY':'sk-ant-shell'}
+            load_settings(path,explicit)
+            self.assertEqual(explicit['ANTHROPIC_API_KEY'],'sk-ant-shell')
 
 if __name__=='__main__':
     unittest.main()
